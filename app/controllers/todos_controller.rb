@@ -3,5 +3,13 @@ class TodosController < ApplicationController
     end
     
     def show
-    end    
+         @todo = {
+             id: params[:id] ,
+            name: 'Wake up at 8am' , 
+            description: 'Mon to Fri' , 
+            duration: 15 
+        }
+    end
+    
+   
 end

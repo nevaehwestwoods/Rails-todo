@@ -22,3 +22,9 @@ The Cloud9 IDE team
 
 Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
 To watch some training videos, visit http://www.youtube.com/user/c9ide
+ elements needed to render a page
+ routes todo/1
+ controller todos
+ action show
+ view show.html.erb
+ styles
