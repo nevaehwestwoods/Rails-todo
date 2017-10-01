@@ -2,3 +2,12 @@
 <p> <%= @todo.description %> </p>
 <p> <%= @todo.duration %> mins </p>
 completed <%= @todo.complete %>
+ <form action="/todos/<%=@todo.id%>"method="POST">
+      <input  type="hidden" name="authenticity_token"
+        value="<%= form_authenticity_token %>"/>
+      <input_type="text" name="description"/>
+      <input  type="text"  name="name" value="<%=@todo.name%>"/ placeholder="Update todo..."/>
+      <input  type="text" name="description" value="<%=@todo.description%>"/ placeholder="Description"/>
+      <input  type="number" name="duration" value="<%=@todo.duration%>"/ placeholder="Pomodoro estimate..."/>
+      <input  type="submit" value="Update"/>
+    </form>
