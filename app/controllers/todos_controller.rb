@@ -4,23 +4,15 @@ class TodosController < ApplicationController
     end
     
     def show
-        id = params[:id]
-        if id == '1'
-            @todo = {
-                id: id,
-                name: 'Make the curriculum',
-                duration: 60
-            }
-        elsif id == '2'
-         @todo = {
-             id: params[:id] ,
-            name: 'Wake up at 8am' , 
-            description: 'Mon to Fri' , 
-            duration: 15 
-            
-        }
-    else
-        @todo ={}
-        end
+      @todo=Todo.find(params[:id])
+    end
+    def create
+        todo=Todo.create(
+            name: params[:name],
+            description: params[:description],
+            duration: params[:duration],
+            complete: params[:complete],
+            )
+        redirect_to "/todos/#{todo.id}"    
     end
 end

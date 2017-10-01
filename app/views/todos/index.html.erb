@@ -41,9 +41,13 @@
       </li>
     </ul>
 
-    <div id="new-todo-block">
-      <input class="text-input" id="new-todo-description" type="text" placeholder="Add a new todo...">
-      <input class="text-input" id="new-pomodoro-estimate" type="number" placeholder="Pomodoro estimate...">
-      <input class="button" id="add-new-todo-button" type="submit" value="Add todo">
-</div>
+    <form action="/todos" method="POST">
+      <input  type="hidden" name="authenticity_token"
+        value="<%= form_authenticity_token %>"
+        <input_type="text" name="description"/>
+      <input  type="text"  name="name" placeholder="Add a new todo..."/>
+      <input  type="text" name="description" placeholder="Description"/>
+      <input  type="number" name="duration" placeholder="Pomodoro estimate..."/>
+      <input  type="submit" value="Add todo"/>
+    </form>
 Code Word <%= @code_word%>

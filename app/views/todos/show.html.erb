@@ -1,16 +1,4 @@
-        <h1>
-      Workshop Todo List
-    </h1>
-
-
-        <input type= "checkbox">
-        <p>Make the curriculum 4 pomodoros</p>
-        <a href="#">Edit</a>
-        <a href="#">Delete</a>
-<a href="index.html">Go Back</a>
-
-
-
-<p> <%= @todo[:name] %> </p>
-<p> <%= @todo[:description] %> </p>
-<p> <%= @todo[:duration] %> </p>
+ <p> <%= @todo.name %> </p>
+<p> <%= @todo.description %> </p>
+<p> <%= @todo.duration %> mins </p>
+completed <%= @todo.complete %>
