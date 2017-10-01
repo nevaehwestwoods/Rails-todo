@@ -2,44 +2,13 @@
       Workshop Todo List
     </h1>
 
-    <ul class="card">
-      <li>
-        <input type="checkbox" name=""/>
-        <a href="/todos/1">Make the curriculum</a>
-        <span class="pomodoro-estimate">4 Pomodoros</span>
-      </li>
-      <li>
-        <input type="checkbox" name=""/>
-        
-        Buy workshop supplies
-        <span class="pomodoro-estimate">3 Pomodoros</span>
-      </li>
-      <li>
-        <input type="checkbox" name=""/>
-        Meet with the volunteer trainers
-        <span class="pomodoro-estimate">2 Pomodoros</span>
-      </li>
-      <li>
-        <input type="checkbox" name=""/>
-        Order food for Saturday and Sunday
-        <span class="pomodoro-estimate">1 Pomodoro</span>
-      </li>
-      <li>
-        <input type="checkbox" name=""/>
-        Check pre-work assignments
-        <span class="pomodoro-estimate">2 Pomodoros</span>
-      </li>
-      <li>
-        <input type="checkbox" name=""/>
-        Send workshop location to all the students
-        <span class="pomodoro-estimate">1 Pomodoro</span>
-      </li>
-      <li>
-        <input type="checkbox" name=""/>
-        Have a great workshop
-        <span class="pomodoro-estimate">0 Pomodoros</span>
-      </li>
-    </ul>
+    <ul> <%@todos.each do |todo|%>
+      <li> 
+      <a href= "/todos/<%= todo.id %>">
+        <%= todo.name %>
+      </a> </li>
+        <% end %>
+      </ul> 
 
     <form action="/todos" method="POST">
       <input  type="hidden" name="authenticity_token"
@@ -50,4 +19,5 @@
       <input  type="number" name="duration" placeholder="Pomodoro estimate..."/>
       <input  type="submit" value="Add todo"/>
     </form>
-Code Word <%= @code_word%>
+
+</ul>
